@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,1000&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="./querie.css">
+    <link rel="icon" href="img/Union-logo.png" />
+
+    <link rel="stylesheet" href="./querie.css">
   </head>
   <body>
     <div class="body_container">
@@ -24,11 +26,11 @@
         </a>
         <nav class="main-nav">
           <ul class="main-nav-list">
-            <li><a class="main-nav-link" href="#">Home</a></li>
-            <li><a class="main-nav-link" href="#">price</a></li>
-            <li><a class="main-nav-link" href="#">features</a></li>
-            <li><a class="main-nav-link nav-cta-v2" href="#">Login</a></li>
-            <li><a class="main-nav-link nav-cta" href="#">Sign up</a></li>
+            <li><a class="main-nav-link" href="#cta">Home</a></li>
+            <li><a class="main-nav-link" href="#subscribe">price</a></li>
+            <li><a class="main-nav-link" href="#videos">features</a></li>
+            <li><a href="./index2.html" class="main-nav-link nav-cta-v2" target="_blank">Login</a></li>
+            <li ><a href="./index3.html" class="main-nav-link nav-cta" >Sign up</a></li>
           </ul>
         </nav>
         <button class="btn-mobile-nav">
@@ -37,11 +39,10 @@
         </button>
       
     
-      
+    
       </header>
       <main>
-
-         <section class="section-hero">
+ <section class="section-hero" id="#cta">
           <div class="hero">
             <div class="text-box">
               <div class="header-desc">
@@ -128,7 +129,7 @@
         
           </div>
         </section>  
-        <section class="section-Library">
+         <section class="section-Library" id="price">
           <div class="library-container">
 
             <h1 class="Library-title">Our Learning <br> <span class="Library-word"> <img class="Vector-end" src="./img/Vector-end.png" alt=""> Library</span></h1>
@@ -176,9 +177,9 @@
                         </blockquote>
                       </figure>
                     </div>
-               <div class="students-help">
+               <div class="students-help" id="student">
                 <div class="img-students-box">
-                 <img src="./img/Mask group (1).png" alt="">
+                 <img class="mask-img" src="./img/Mask group (1).png" alt="">
                 </div>
                 <div class="text-students-box">
                <h1 class ="students-title">We Help Students Grow <br><span class="student-span"><img class="their-carrer-background" src="./img/students-icon.png" alt=""> Their Carrer</span></h1>
@@ -196,15 +197,14 @@
               
               </div>             
        
-        </section>
-        <section class="section-videos">
+ </section>
+         <section class="section-videos" id="videos">
           <h1 class="title-vector-afterEnd">Give their boundless potential <br><span class="vector-afterEnd"> <img src="./img/vector-aftertheend.png" alt="" class="vector-afterEnd-img"> unlimited access</span></h1>
           <p class="parg-afterEnd">Unlock special features and access to everything <br> modernschool.com offers with a Premium membership.
           </p>
           <div class="container-colmuns">
             <div class="images-afterEnd-box">
               <div class="video-container">
-              <!-- <img src="./img/box-shadow-rectangle.png" alt="" class="shadow-box"> -->
               <video width="720" height="440"  controls>
                 <source src="./videos/pexels-pavel-danilyuk-5223097.mp4" type="video/mp4">
                 <source src="movie.ogg" type="video/ogg">
@@ -219,6 +219,8 @@
               </p>
               <a href="#" class="btn">Learn more</a>
             </div>  
+            <hr class="divider">
+           
             <div class="text-afterEnd-box">
               <h3 class="title-afterEnd">Guided Lessons</h3>
               <p class="parag-afterEnd">Follow our carefully designed sequence <br>
@@ -231,8 +233,8 @@
             </div>  
 
           </div>
-        </section>
-        <section class="section-community">
+        </section> 
+        <section class="section-community" id="community">
           <h1 class="title-content-community">Join the modernschool.com <br><span class="span-content-community">community!</span> </h1>
            <p class="parag-content-community">It'stime to choose wisely your learning platfrom. Bimble has professional <br>
             mentors and instructors that always helps you to grow up your career</p>
@@ -285,12 +287,47 @@
             
           </div>
 
-        </section>
-        <div class="btn-containe-v2">
+        </section> 
+       <div class="btn-containe-v2">
 
           <a href="#" class="New-btn">Show More &#8595;</a>
         </div>
-        <section class="section-subscribe">
+        <section class="section-cta" id="subscribe">
+          <div class="container">
+            <div class="cta">
+              <div class="cta-text-box">
+                <h2 class="h1.subscribe-title">Subscribe to get the Latest News </h2>
+                <p class="p.parag-subscribe">
+                  We recommended you to subscribe to our newspaper. drop you email below to get daily update about us. 
+                </p>
+                <img src="./img/Ellipse 3707.png" alt="" class="ellipse">
+  
+                <form class="cta-form" action="#">
+                  
+  
+                  <div class="delay-subscribe-cta">
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Enter Your email adress..."
+                      required
+                    />
+                    <button class="btn-bn">Sign up</button>
+                  </div>
+  
+               
+                  </div>
+  
+  
+                  <!-- <input type="checkbox" />
+                  <input type="number" /> -->
+                </form>
+              </div>
+             
+            </div>
+          </div>
+        </section>
+        <!-- <section class="section-subscribe">
           <div class="area">
      <div class="container-of-area">
 
@@ -299,7 +336,6 @@
         </h1>
         <p class="parag-subscribe">We recommended you to subscribe to our newspaper. drop you email below to get daily update about us.
         </p>
-        <img src="./img/Ellipse 3707.png" alt="" class="ellipse">
         <form action="#" class="cta">
 
           <input type="email" name="" id="" placeholder="Enter Your email address..."/>
@@ -307,12 +343,11 @@
         </form>
         </div>
       </div>
-    </section>
-
+    </section>  -->
       </div>
     </main>
 
-    <footer class="footer">
+     <footer class="footer">
       <div class="body_container grid grid--footer">
         <div class="logo-col">
           <a href="#" class="footer-logo">
@@ -393,11 +428,11 @@ Copyright © 2022 Modernschool.com, • All Rights Reserved.
         
       </div>
     </footer>
-    <!-- <section class="extra-footer">
+    <section class="extra-footer">
   
 
      </div> 
-    </section> -->
+    </section> 
     <script src="./main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -406,7 +441,4 @@ Copyright © 2022 Modernschool.com, • All Rights Reserved.
     
 
 
-
-
-/* button one */
 
