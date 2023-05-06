@@ -6,16 +6,20 @@ import {
   deleteTodo,
 } from "../controllers/todos";
 import { ValidationSource, validator } from "../helpers/validator";
-
+import { todoSchema } from "./schema/todoSchema";
 const router: Router = Router();
 
 router.get("/todos", getTodos);
 
-router.post("/add-todo", validator(schema, ValidationSource.BODY), addTodo);
+router.post(
+  "/add-todo",
+  validator(todoSchema.checkBody, ValidationSource.BODY),
+  addTodo
+);
 
 router.put(
   "/edit-todo/:id",
-  validator(schema, ValidationSource.BODY),
+  validator(schema, ValidationSource.PARAM),
   updateTodo
 );
 
