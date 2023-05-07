@@ -1,25 +1,22 @@
-const Joi = require("@hapi/joi");
+import { body, param } from "express-validator";
 
-export default {
-  checkId: Joi.object().keys({
-    id: Joi.string().required(),
-  }),
-
-  checkBody: Joi.object().keys({
-    Title: Joi.string().required(),
-
-    Description: Joi.string().required(),
-
-    Status: Joi.string().valid("Completed", "Not Completed"),
-  }),
-
-  CheckUpdate: Joi.object().keys({
-    Title: Joi.string().required(),
-
-    Description: Joi.string().required(),
-
-    Status: Joi.string().valid("Completed", "Not Completed"),
-  }),
+export const todoSchema = {
+  getTodos: [],
+  addTodo: [
+    body("title").notEmpty(),
+    body("description").optional(),
+    body("completed").optional().isBoolean(),
+  ],
+  updateTodo: [
+    param("id").notEmpty(),
+    body("title").notEmpty(),
+    body("description").optional(),
+    body("completed").optional().isBoolean(),
+  ],
+  deleteTodo: [param("id").notEmpty()],
+  shareTodo: [param("id").notEmpty(), body("sharedWith").isArray().notEmpty()],
+  getSharedToMe: [],
+  commentTodo: [param("id").notEmpty(), body("comment").notEmpty()],
 };
 
-//6452719a2c4717b3cc84bd21
+export default todoSchema;

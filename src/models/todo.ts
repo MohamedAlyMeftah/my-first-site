@@ -1,25 +1,54 @@
-import { ITodo } from "../types/todo";
-import { model, Schema } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-const todoSchema: Schema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
+export interface ITask extends Document {
+  title: string;
+  description: string;
+  status: "complete" | "incomplete";
+  creator: mongoose.Types.ObjectId;
+  sharedWith: mongoose.Types.ObjectId[];
+  comments: {
+    author: mongoose.Types.ObjectId;
+    content: string;
+  }[];
+}
 
-    description: {
-      type: String,
-      required: true,
-    },
-
-    status: {
-      type: String,
-      enum: ["completed", "not completed"],
-      required: true,
-    },
+const TodoSchema: Schema = new Schema({
+  title: {
+    type: String,
+    required: true,
   },
-  { timestamps: true }
-);
+  description: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["complete", "incomplete"],
+    default: "incomplete",
+  },
+  creator: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  sharedWith: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+  comments: [
+    {
+      author: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+      },
+      content: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+});
 
-export default model<ITodo>("Todo", todoSchema);
+export default mongoose.model<ITask>("Todo", TodoSchema);
